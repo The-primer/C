@@ -1,16 +1,17 @@
 #include <stdio.h>
-
-void main()
+#include <conio.h>
+#include <stdlib.h>
+int main()
 {
 	int Password=0,Number=0,price=58,i=0;
 
 	while( Password != 1234 )
 	{
 		if( i >= 3 )
-			return;
+			return EXIT_FAILURE;
 		i++;
 		puts("Please input Password: ");
-		scanf("%d",&Password);
+		scanf_s("%d",&Password);
 	}
 
 	i=0;
@@ -18,7 +19,7 @@ void main()
 	{
 		do{
 			puts("Please input a number between 1 and 100: ");
-			scanf("%d",&Number);
+			scanf_s("%d",&Number);
 			printf("Your input number is %d\n",Number);
 		}while( !(Number>=1 && Number<=100) );
 		if( Number >= 90 )
@@ -51,8 +52,9 @@ void main()
 			else if( Number > price )
 				printf(" Sorry, Only a little bigger! Press any key to try again!\n");
 		}
-		getch();
+		_getch();
 	}
+	return EXIT_SUCCESS;
 }
 
 
